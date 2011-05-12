@@ -1,29 +1,22 @@
 
-! Xdefaults
+! .Xdefaults
 !
 ! Author:  David Pequegnot
 ! Contact: david.pequegnot@gmail.com
 
 !! Xft configuration
 !{{{ Begin - Xft
-     !!
-     ! Xft font dpi.
      Xft.dpi:		96
-     !!
-     ! Enables antialisaing.
      Xft.antialias:	true
-     !!
-     ! Subpixel geometry.
      Xft.rgba:		rgb
-     !!
-     ! The rasterizer should use hinting.
      Xft.hinting:	true
-     !!
-     ! Automatic hinting style.
      Xft.hintstyle:	hintslight
 !}}} End - Xft
 
 !! Rxvt configuration
+! The configuration is based on the .Xdefault of
+! Guillaume Bouffard (Stroumph):
+! https://github.com/Stroumph
 !{{{ Begin - Rxvt
      !>>--------------------------------------------------------------
      ! Environment parameters
@@ -199,16 +192,16 @@
      URxvt*.colorUL:    #ffffff
      !!
      ! Terminal background.
-     URxvt*background:        #3f3f3f
+     URxvt*background:  #3f3f3f
      !!
      ! Terminal foreground.
-     URxvt*foreground:        #dcdccc
+     URxvt*foreground:  #dcdccc
      !!
      ! Terminal font.
      ! It is the inconsolata-g font well-designed for developers:
      ! http://leonardo-m.livejournal.com/77079.html
      ! Making the font smaller can cause some troubles.
-     URxvt.font:	      xft:Inconsolata-g:size=10:antialias=true
+     URxvt.font:	xft:Inconsolata-g:size=10:antialias=true
      !!
      ! URxvt colors definitions (in order to display folders etc.)
      ! black + red
@@ -235,6 +228,17 @@
      ! bright-cyan + bright-white
      URxvt*color14:     #93e0e3
      URxvt*color15:     #ffffff
+     !<<--Terminal theme----------------------------------------------
+
+     !>>--------------------------------------------------------------
+     ! Keysym
+     !------------------------
+     !!
+     ! Because I had some problems with the End and Home keys I needed
+     ! to add the following lines:
+     URxvt*keysym.Home:     \033[1~
+     URxvt*keysym.End: 	    \033[4~
+     !<<--Keysym------------------------------------------------------
 
      !>>--------------------------------------------------------------
      ! Transparency parameters
