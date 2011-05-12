@@ -1,0 +1,264 @@
+
+! Xdefaults
+!
+! Author:  David Pequegnot
+! Contact: david.pequegnot@gmail.com
+
+!! Xft configuration
+!{{{ Begin - Xft
+     !!
+     ! Xft font dpi.
+     Xft.dpi:		96
+     !!
+     ! Enables antialisaing.
+     Xft.antialias:	true
+     !!
+     ! Subpixel geometry.
+     Xft.rgba:		rgb
+     !!
+     ! The rasterizer should use hinting.
+     Xft.hinting:	true
+     !!
+     ! Automatic hinting style.
+     Xft.hintstyle:	hintslight
+!}}} End - Xft
+
+!! Rxvt configuration
+!{{{ Begin - Rxvt
+     !>>--------------------------------------------------------------
+     ! Environment parameters
+     !------------------------
+     !!
+     ! Specifies the terminal type name to be set in the TERM
+     ! environment. The value rxvt-256color enables the 256 color
+     ! support in URxvt but is not compliant with ssh sessions.
+     !URxvt.termName:	rxvt-unicode
+     URxvt.termName:	rxvt-256color
+     !!
+     ! The locale to use for opening the IM.
+     URxvt*imLocale: 	     	en_GB.UTF-8
+     !<<--Environment parameters--------------------------------------
+
+     !>>--------------------------------------------------------------
+     ! Global behaviour parameters
+     !------------------------
+     !!
+     ! Saves 65535 lines in the scrollback buffer
+     URxvt.saveLines:	65535
+     !!
+     ! Start as a login shell by prepending a '-' to argv[0]
+     ! of the shell
+     URxvt.loginShell:	true
+     !<<--Global behavior parameters----------------------------------
+
+     !>>--------------------------------------------------------------
+     ! Scrollbar parameters
+     !------------------------
+     !!
+     ! Scroll to bottom when a non-special key is pressed. Special
+     ! keys are those which are intercepted by rxvt-unicode for 
+     ! special handling and are not passed onto the shell
+     URxvt.scrollTtyKeypress:	true
+     !!
+     ! Do not scroll to bottom when tty receives output
+     URxvt.scrollTtyOutput:	false
+     !!
+     ! Disable the scrollbar
+     URxvt.scrollBar:		false
+     !<<--Scrollbar parameters----------------------------------------
+
+     !>>--------------------------------------------------------------
+     ! Terminal behaviour
+     !------------------------
+     !!
+     ! The characters used as delimiters for double-click word 
+     ! selection (whitespace delimiting is added automatically)
+     ! Using built-in instead of the custom one:
+     ! BACKSLASH `"'&()*,;<=>?@[]^{|}
+     ! The custome parameter has been kept for example
+     URxvt.cutchars:	        "()*,<>[]{}|"
+     !!
+     ! Enables "insecure" mode.  Rxvt-unicode offers some escape 
+     ! sequences that echo arbitrary strings like the icon name or 
+     ! the locale. This could be abused if somebody gets 8-bit-clean 
+     ! access to your display, whether through a mail client 
+     ! displaying mail bodies unfiltered or through write(1) or any 
+     ! other means.
+     URxvt.insecure:	        true
+     !<<--Terminal behaviour------------------------------------------
+
+     !>>--------------------------------------------------------------
+     ! Perl extension scripts
+     !------------------------
+     !!
+     ! The urxvt perl lib path.
+     URxvt*perl-lib:            /usr/lib/urxvt/perl/ 
+     !!
+     ! List of perl extension scripts to use in the terminal instance.
+     ! The default, url-select and keyboard-select scripts are enabled.
+     URxvt.perl-ext:   	        default,url-select,keyboard-select
+     !<<--Perl extension scripts--------------------------------------
+
+     !**--------------------------------------------------------------
+     ! url-select perl extension script
+     !------------------------
+     !!
+     ! Browser to launch when selecting an url.
+     URxvt.urlLauncher:		google-chrome
+     !!
+     ! In addition to the url-select perl extension.
+     ! The keysym M-u will select the next url in the terminal.
+     URxvt.keysym.M-u:	   	perl:url-select:select_next
+     !!
+     ! Underline urls.
+     URxvt.underlineURLs:     true
+     !!
+     ! Define the pattern to match to be considered as an url
+     ! (mailto, http, https, ftp, file and www)
+     URxvt*matcher.pattern.1: \\b(mailto|http|https|ftp|file):[/]*[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+     URxvt*matcher.pattern.2: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+     ! The middle-click button will be used to launch the
+     ! browser.
+     urxvt*matcher.button:    1
+     !**--url-select--------------------------------------------------
+
+     !**--------------------------------------------------------------
+     ! keyboard-select perl extension script
+     !------------------------
+     !!
+     ! Activate the keyboard-select mode using the M-Escape shortcut.
+     URxvt.keysym.M-Escape:   perl:keyboard-select:activate
+     !!
+     ! Activate the keyboard-select mode directly in backward search
+     ! mode.
+     URxvt.keysym.M-s:        perl:keyboard-select:search
+     !**--keyboard-select---------------------------------------------
+
+     !>>--------------------------------------------------------------
+     ! MISC
+     !------------------------
+     !!
+     ! Specify the command pipe for vt100 printer (lpr by default).
+     ! Use Print to initiate a screen dump to the printer and
+     ! Ctrl-Print or Shift-Print to include the scrollback as well.
+     ! The string will be interpreted as if typed into the shell 
+     ! as-is.
+     URxvt.print-pipe:	        cat > $(echo urxvt.dump.$(date +%d.%m.%Y_%H.%M.%S))
+     !!
+     ! Secondary screen support.
+     URxvt.secondaryScreen:	true
+     !!
+     ! Turn on secondary screen scroll. Scrolls on the secondary screen
+     ! will change the scrollback buffer.
+     URxvt.secondaryScroll:	true
+     !!
+     ! De-iconify (map) on receipt of a bell character.
+     URxvt.mapAlert:	   	true
+     !!
+     ! Set the urgency hint for the wm on receipt of a bell character.
+     URxvt.urgentOnBell:        true
+     !!
+     ! Do not use visual bell on receipt of a bell character.
+     ! Enabling this option will display a white screen for an instant
+     ! on receipt of a bell character.
+     URxvt.visualBell: 	        false
+     !!
+     ! Inhibit writing record into the system log file utmp.
+     URxvt.utmpInhibit:	        true
+     !<<--MISC--------------------------------------------------------
+
+     !>>--------------------------------------------------------------
+     ! Terminal appearance
+     !------------------------
+     !!
+     ! Set MWM hints to request a borderless window, i.e. if honoured
+     ! by the WM, the rxvt-unicode window will not have window
+     ! decorations.
+     ! This option seems to cause difficulties in my WM (awesome).
+     !URxvt*borderLess:		true
+     !!
+     ! Internal border of 1 pixel.
+     URxvt*internalBorder:	1
+     !!
+     ! Turn on double-buffering for xft.
+     URxvt.buffered:          true
+     !<<--Terminal appearance-----------------------------------------
+
+     !>>--------------------------------------------------------------
+     ! Terminal theme
+     !------------------------
+     ! The theme comes from the Adrian C. (anrxc)
+     ! http://sysphere.org/~anrxc/j/articles/zenburn/index.html
+     ! It is named zenburn.
+     !------------------------
+     !!
+     ! Cursor color.
+     URxvt*cursorColor: #DCDCCC
+     !!
+     ! URLs color.
+     URxvt*.colorUL:    #ffffff
+     !!
+     ! Terminal background.
+     URxvt*background:        #3f3f3f
+     !!
+     ! Terminal foreground.
+     URxvt*foreground:        #dcdccc
+     !!
+     ! Terminal font.
+     ! It is the inconsolata-g font well-designed for developers:
+     ! http://leonardo-m.livejournal.com/77079.html
+     ! Making the font smaller can cause some troubles.
+     URxvt.font:	      xft:Inconsolata-g:size=10:antialias=true
+     !!
+     ! URxvt colors definitions (in order to display folders etc.)
+     ! black + red
+     URxvt*color0:      #1E2320
+     URxvt*color1:      #705050
+     ! green + yellow
+     URxvt*color2:      #60b48a
+     URxvt*color3:      #dfaf8f
+     ! blue + purple
+     URxvt*color4:      #506070
+     URxvt*color5:      #dc8cc3
+     ! cyan + white
+     URxvt*color6:      #8cd0d3
+     URxvt*color7:      #dcdccc
+     ! bright-black + bright-red
+     URxvt*color8:      #709080
+     URxvt*color9:      #dca3a3
+     ! bright-green + bright-yellow
+     URxvt*color10:     #c3bf9f
+     URxvt*color11:     #f0dfaf
+     ! bright-blue + bright-purple
+     URxvt*color12:     #94bff3
+     URxvt*color13:     #ec93d3
+     ! bright-cyan + bright-white
+     URxvt*color14:     #93e0e3
+     URxvt*color15:     #ffffff
+
+     !>>--------------------------------------------------------------
+     ! Transparency parameters
+     !------------------------
+     !!
+     ! Turn on pseudo-transparency by using the root pixmap as
+     ! background
+     !URxvt.transparent:	true
+     !!
+     ! Tint the transparent background in white
+     !URxvt.tintColor:	white
+     !!
+     ! Attempt to find a visual with a 32 bits depth
+     !URxvt.depth:      32
+     !!
+     ! Darken the transparent background
+     ! A value between 0 and 99 darken the transparent background
+     ! and a value between 101 and 200 lighten the transparent
+     ! background. A value of 100 means no shading.
+     !URxvt.shading:30
+     !----------------------------------------------------------------
+     ! Transparency parameters have been disabled because it is a
+     ! pseudo transparency: the desktop background in just repeated
+     ! in the terminal.
+     ! Try xcompmgr instead.
+     !<<--Transparency parameters-------------------------------------
+!}}} End - Rxvt
