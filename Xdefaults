@@ -266,3 +266,70 @@
      ! Try xcompmgr instead.
      !<<--Transparency parameters-------------------------------------
 !}}} End - Rxvt
+
+!! Xscreensaver lock dialog theme
+! The current theming is based on the ArchLinux wiki:
+! https://wiki.archlinux.org/index.php/X_resources#xscreensaver_theming
+! Moreover, the global configuration is located in the
+! .xscreensaver file.
+!{{{ Begin - Xscreensaver
+     !>>--------------------------------------------------------------
+     ! Global options
+     !------------------------
+     !!
+     ! A splash screen is not displayed at startup.
+     xscreensaver.splash: false
+     !<<--Global options----------------------------------------------
+ 
+     !>>--------------------------------------------------------------
+     ! Font settings
+     !------------------------
+     xscreensaver.Dialog.headingFont:        -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+     xscreensaver.Dialog.bodyFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+     xscreensaver.Dialog.labelFont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+     xscreensaver.Dialog.unameFont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+     xscreensaver.Dialog.buttonFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+     xscreensaver.Dialog.dateFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+     xscreensaver.passwd.passwdFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+     !<<--Font settings-----------------------------------------------
+
+     !>>--------------------------------------------------------------
+     ! General dialog box
+     !------------------------
+     !!
+     ! Affects main hostname, username, password text
+     xscreensaver.Dialog.foreground:         #ffffff
+     xscreensaver.Dialog.background:         #111111
+     xscreensaver.Dialog.topShadowColor:     #111111
+     xscreensaver.Dialog.bottomShadowColor:  #111111
+     xscreensaver.Dialog.Button.foreground:  #666666
+     xscreensaver.Dialog.Button.background:  #ffffff
+     !<<--General dialog box------------------------------------------
+
+     !>>--------------------------------------------------------------
+     ! Username/password input box and date text colour
+     !------------------------
+     xscreensaver.Dialog.text.foreground:    #666666
+     xscreensaver.Dialog.text.background:    #ffffff
+     xscreensaver.Dialog.internalBorderWidth:24
+     xscreensaver.Dialog.borderWidth:        20
+     xscreensaver.Dialog.shadowThickness:    2
+     !<<--Username/password input box and date text colour------------
+
+     !>>--------------------------------------------------------------
+     ! Timeout bar 
+     !------------------------
+     !!
+     ! Background is actually determined by Dialog.text.background
+     xscreensaver.passwd.thermometer.foreground:  #ff0000
+     xscreensaver.passwd.thermometer.background:  #000000
+     xscreensaver.passwd.thermometer.width:       8
+
+     !>>--------------------------------------------------------------
+     ! Datestamp format
+     !------------------------
+     !!
+     !i.e. 22:13 Wed May 15, 2011
+     xscreensaver.dateFormat:    %H:%M %a %B %d, %Y
+     !<<--Datestamp format--------------------------------------------
+!}}} End - Xscreensaver
