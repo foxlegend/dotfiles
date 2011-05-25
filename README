@@ -11,3 +11,7 @@ Xdefaults:
 	my xscreensaver lock dialog theme.
 	The urxvt color theme is based on the zenburn theme.
 	
+zshrc:
+	My .zshrc configuration.
+	Configuration files are localted under the .zsh folder.
+	* Prompt theming with vcs_info and colors
