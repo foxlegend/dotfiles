@@ -15,34 +15,6 @@ autoload colors && colors
 ######################################################################
 
 ######################################################################
-# Defines a set of variables to create the prompt.
-####################
-##
-# Found at http://git.sysphere.org/dotfiles/tree/zshrc
-# PR_LRCORNER and PR_URCORNER are never used in this zsh
-# configuration.
-typeset -A altchar 
-set     -A altchar ${(s..)terminfo[acsc]}
-PR_SET_CHARSET="%{${terminfo[enacs]}%}" # Enables alternate character set (terminfo)
-PR_SHIFT_IN="%{${terminfo[smacs]}%}"    # Start alternate character set (terminfo)
-PR_SHIFT_OUT="%{${terminfo[rmacs]}%}"   # End alternate character set (terminfo)
-PR_HBAR="${altchar[q]:--}"              # Character: a simple horizontal bar
-PR_ULCORNER="${altchar[l]:--}"          # Character: an upper-left corner
-PR_LLCORNER="${altchar[m]:--}"          # Character: a lower-left corner
-# PR_LRCORNER="${altchar[j]:--}"          # Character: a lower-right corner
-# PR_URCORNER="${altchar[k]:--}"          # Character: an upper-right corner
-
-for COLOR in RED GREEN BLUE MAGENTA CYAN YELLOW; do
-    eval PR_$COLOR='%{$fg[${(L)COLOR}]%}'
-    eval PR_BOLD_$COLOR='%B%F{${(L)COLOR}}'
-    eval PR_BOLD_UL_$COLOR='%B%U%F{${(L)COLOR}}'
-    eval PR_UL_$COLOR='%U%F{${(L)COLOR}}'
-done
-
-PR_RESET="%{$reset_color%}"
-######################################################################
-
-######################################################################
 # VCS_INFO
 ####################
 # Shows state of the Versioning Control System
@@ -72,15 +44,15 @@ prompt_first_line () {
 # order to display the prompt.
 precmd () {
     vcs_info
-    prompt_first_line
 }
 
 # Main prompt.
-PROMPT='$PR_SHIFT_IN$PR_LLCORNER$PR_HBAR$PR_SHIFT_OUT(%(?..$PR_BOLD_MAGENTA%?$PR_RESET:)%(!.$PR_BOLD_RED#$PR_RESET.$PR_GREEN%%$PR_RESET)) '
+PROMPT='%(!.%B%U%F{red}%n%f%u%b.%F{blue}%n%f)@%F{green}%m%f:%F{yellow}%y%f %1(j.(%B%F{red}bg: %j%f%b) .)(%F{cyan}%~%f)
+%(!.%B%F{red}#%f%b.%F{green}%%%f) '
 
 # Right part of the prompt.
 # It displays vcs infos.
-RPROMPT='${vcs_info_msg_0_}'
+RPROMPT='%(?..[%B%F{red}RC: %?%f%b] )${vcs_info_msg_0_}'
 
 # Alternate prompt for loop (while and foreach) and new lines .
 PROMPT2='{%_} '
