@@ -201,7 +201,7 @@
      ! It is the inconsolata-g font well-designed for developers:
      ! http://leonardo-m.livejournal.com/77079.html
      ! Making the font smaller can cause some troubles.
-     URxvt.font:	xft:Inconsolata-g:size=10:antialias=true
+     URxvt.font:	xft:Inconsolata-g:size=9:antialias=true
      !!
      ! URxvt colors definitions (in order to display folders etc.)
      ! black + red
