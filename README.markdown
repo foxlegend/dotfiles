@@ -24,3 +24,9 @@ To use my current configuration
 If you want to use my old configuration, you will need to copy the `zshrc` file
 and `zsh` directory with its content in the user's home directory, as 
 respectively `.zshrc` and `.zsh` (do not forget the dots).
+
+## emacs.d
+
+It is my current emacs configuration.
+
+To use it, juste copy the `emacs.d` directory in the user's home directory as `.emacs.d` (do not forget the dot).
