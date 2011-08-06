@@ -1,3 +1,4 @@
+(setq load-path (cons "/home/fox/.emacs.d" load-path))
 ;;;-----------------------------------------------
 ;; emacs
 ; emacs appearance (display configuration and theme)
@@ -33,7 +34,9 @@
 ;;;-----------------------------------------------
 ;; auctex
 (load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+; To enable preview-latex, please emerge app-emacs/auctex
+; with "preview-latex" flag.
+; (load "preview-latex.el" nil t t)
 
 ;;;-----------------------------------------------
 ;; org-mode

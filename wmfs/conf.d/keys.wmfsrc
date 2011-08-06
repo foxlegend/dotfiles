@@ -1,0 +1,230 @@
+# WMFS configuration (keys.wmfsrc)
+#
+# Maintener: David Pequegnot <david.pequegnot@gmail.com> aka `FoxLegend'
+# Github   : https://github.com/foxlegend/dotfiles
+# Bitbucket: https://bitbucket.org/FoxLegend/dotfiles
+#
+# Based on bacardi55's configuration: https://github.com/bacardi55/dotfiles
+#
+# Keys bindings settings
+
+[keys]
+  # Quit wmfs
+  [key] mod = {"Super", "Control", "Alt"} key = "q" func = "quit" [/key]
+
+  # Reload the wmfs configuration
+  [key] mod = {"Super", "Control"} key = "r" func = "reload" [/key]
+
+  # Kill the selected client
+  [key] mod = {"Super", "Control"} key = "q" func = "client_kill" [/key]
+
+  # Open a terminal
+  [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "urxvtc" [/key]
+
+  # Swap current client with the next/previous.
+  [key] mod = {"Super"} key = "Tab" func = "client_swap_next" [/key]
+  [key] mod = {"Super", "Shift"} key = "Tab" func = "client_swap_prev" [/key]
+
+  # Toggle maximum the selected client
+  [key] mod = {"Super", "Control"} key = "m" func = "toggle_max" [/key]
+
+  # Toggle free the selected client
+  [key] mod = {"Super", "Control"} key = "f" func = "toggle_free" [/key]
+
+  # Toggle the position of the infobar
+  [key] mod = {"Super", "Control"} key = "b" func = "toggle_infobar_position" [/key]
+
+  # Toggle the resizehint of the current tag/screen
+  [key] mod = {"Super", "Shift", "Control"} key = "r" func = "toggle_resizehint" [/key]
+
+  # Select the next/previous client
+  [key] mod = {"Alt"} key = "Tab" func = "client_next" [/key]
+  [key] mod = {"Alt","Shift"} key = "Tab" func = "client_prev" [/key]
+                        
+  # Set the next/previous layout
+  [key] mod = {"Super"} key = "space" func = "layout_next" [/key]
+  [key] mod = {"Super", "Shift"} key = "space" func = "layout_prev" [/key]
+
+  # Increase/decrease mwfact (split ratio between master and slave panes)
+  [key] mod = {"Super", "Control"} key = "l" func = "set_mwfact" cmd = "+0.025" [/key]
+  [key] mod = {"Super", "Control"} key = "h" func = "set_mwfact" cmd = "-0.025" [/key]
+
+  # Increase/decrease nmaster (number of master clients)
+  [key] mod = {"Super", "Control"} key = "d" func = "set_nmaster" cmd = "+1" [/key]
+  [key] mod = {"Super", "Control", "Shift"} key = "d" func = "set_nmaster" cmd = "-1" [/key]
+
+  # Launchers
+  [key] mod = {"Super"} key = "r" func = "launcher" cmd = "launcher_exec" [/key]
+  [key] mod = { "Super", "Shift" } key = "r" func = "launcher" cmd = "launcher_ssh" [/key]
+
+  # Select the next/previous tag
+  [key] mod = {"Super"} key = "Right" func = "tag_next" [/key]
+  [key] mod = {"Super"} key = "Left" func = "tag_prev" [/key]
+
+  # Select the next tag where there is a client
+  [key] mod = {"Super", "Shift"} key = "Right" func = "tag_next_visible" [/key]
+  [key] mod = {"Super", "Shift"} key = "Left" func = "tag_prev_visible" [/key]
+
+  # Go to tag x
+  [key] mod = {"Super"} key = "ampersand" func = "tag" cmd = "1" [/key]
+  [key] mod = {"Super"} key = "eacute" func = "tag" cmd = "2" [/key]
+  [key] mod = {"Super"} key = "quotedbl" func = "tag" cmd = "3" [/key]
+  [key] mod = {"Super"} key = "apostrophe" func = "tag" cmd = "4" [/key]
+  [key] mod = {"Super"} key = "parenleft" func = "tag" cmd = "5" [/key]
+  [key] mod = {"Super"} key = "minus" func = "tag" cmd = "6" [/key]
+  [key] mod = {"Super"} key = "egrave" func = "tag" cmd = "7" [/key]
+  [key] mod = {"Super"} key = "underscore" func = "tag" cmd = "8" [/key]
+  [key] mod = {"Super"} key = "ccedilla" func = "tag" cmd = "9" [/key]
+  [key] mod = {"Super"} key = "agrave" func = "tag" cmd = "10" [/key]
+  [key] mod = {"Super"} key = "parenright" func = "tag" cmd = "11" [/key]
+  [key] mod = {"Super"} key = "equal" func = "tag" cmd = "12" [/key]
+
+  # Go to previous tag
+  [key] mod = {"Super"} key = "twosuperior" func = "tag_prev_sel" [/key]
+
+  # Go to last tag
+  [key] mod = {"Super"} key = "Escape" func = "tag_last" [/key]
+
+  # Stay last tag
+  [key] mod = {"Super", "Shift"} key = "Escape" func = "tag_stay_last" [/key]
+
+  # Change screen
+  [key] mod = {"Super"} key = "Tab" func = "screen_next" [/key]
+  [key] mod = {"Super", "Shift"} key = "Tab" func = "screen_prev" [/key]
+
+  # Swap client in the next/prev screen
+  [key] mod = {"Super", "Control"} key = "a" func = "client_screen_next" [/key]
+  [key] mod = {"Super", "Control"} key = "z" func = "client_screen_prev" [/key]
+
+  # Transfert selected client to x
+  [key] mod = {"Super", "Alt"} key = "ampersand" func = "tag_transfert" cmd ="1" [/key]
+  [key] mod = {"Super", "Alt"} key = "eacute" func = "tag_transfert" cmd ="2" [/key]
+  [key] mod = {"Super", "Alt"} key = "quotedbl" func = "tag_transfert" cmd ="3" [/key]
+  [key] mod = {"Super", "Alt"} key = "apostrophe" func = "tag_transfert" cmd ="4" [/key]
+  [key] mod = {"Super", "Alt"} key = "parenleft" func = "tag_transfert" cmd ="5" [/key]
+  [key] mod = {"Super", "Alt"} key = "minus" func = "tag_transfert" cmd ="6" [/key]
+  [key] mod = {"Super", "Alt"} key = "egrave" func = "tag_transfert" cmd ="7" [/key]
+  [key] mod = {"Super", "Alt"} key = "underscore" func = "tag_transfert" cmd ="8" [/key]
+  [key] mod = {"Super", "Alt"} key = "ccedilla" func = "tag_transfert" cmd ="9" [/key]
+  [key] mod = {"Super", "Alt"} key = "agrave" func = "tag_transfert" cmd = "10" [/key]
+  [key] mod = {"Super", "Alt"} key = "parenright" func = "tag_transfert" cmd = "11" [/key]
+  [key] mod = {"Super", "Alt"} key = "equal" func = "tag_transfert" cmd = "12" [/key]
+
+   # Move and follow
+   [key] mod = {"Super", "Control"} key = "ampersand" func = "tag_transfert" cmd ="1" [/key]
+   [key] mod = {"Super", "Control"} key = "ampersand" func = "tag" cmd = "1" [/key]
+   [key] mod = {"Super", "Control"} key = "eacute" func = "tag_transfert" cmd ="2" [/key]
+   [key] mod = {"Super", "Control"} key = "eacute" func = "tag" cmd = "2" [/key]
+   [key] mod = {"Super", "Control"} key = "quotedbl" func = "tag_transfert" cmd ="3" [/key]
+   [key] mod = {"Super", "Control"} key = "quotedbl" func = "tag" cmd = "3" [/key]
+   [key] mod = {"Super", "Control"} key = "apostrophe" func = "tag_transfert" cmd ="4" [/key]
+   [key] mod = {"Super", "Control"} key = "apostrophe" func = "tag" cmd = "4" [/key]
+   [key] mod = {"Super", "Control"} key = "parenleft" func = "tag_transfert" cmd ="5" [/key]
+   [key] mod = {"Super", "Control"} key = "parenleft" func = "tag" cmd = "5" [/key]
+   [key] mod = {"Super", "Control"} key = "minus" func = "tag_transfert" cmd ="6" [/key]
+   [key] mod = {"Super", "Control"} key = "minus" func = "tag" cmd = "6" [/key]
+   [key] mod = {"Super", "Control"} key = "egrave" func = "tag_transfert" cmd ="7" [/key]
+   [key] mod = {"Super", "Control"} key = "egrave" func = "tag" cmd = "7" [/key]
+   [key] mod = {"Super", "Control"} key = "underscore" func = "tag_transfert" cmd ="8" [/key]
+   [key] mod = {"Super", "Control"} key = "underscore" func = "tag" cmd = "8" [/key]
+   [key] mod = {"Super", "Control"} key = "ccedilla" func = "tag_transfert" cmd ="9" [/key]
+   [key] mod = {"Super", "Control"} key = "ccedilla" func = "tag" cmd = "9" [/key]
+   [key] mod = {"Super", "Control"} key = "agrave" func = "tag_transfert" cmd ="10" [/key]
+   [key] mod = {"Super", "Control"} key = "agrave" func = "tag" cmd = "10" [/key]
+   [key] mod = {"Super", "Control"} key = "parentright" func = "tag_transfert" cmd ="11" [/key]
+   [key] mod = {"Super", "Control"} key = "parenright" func = "tag" cmd = "11" [/key]
+   [key] mod = {"Super", "Control"} key = "equal" func = "tag_transfert" cmd ="12" [/key]
+   [key] mod = {"Super", "Control"} key = "equal" func = "tag" cmd = "12" [/key]
+
+   # Toggle additional tags (x) on the current tag
+   # aka : combine tags ^^
+   [key] mod = {"Control", "Shift"} key = "ampersand" func = "tag_toggle_additional" cmd ="1" [/key]
+   [key] mod = {"Control", "Shift"} key = "eacute" func = "tag_toggle_additional" cmd ="2" [/key]
+   [key] mod = {"Control", "Shift"} key = "quotedbl" func = "tag_toggle_additional" cmd ="3" [/key]
+   [key] mod = {"Control", "Shift"} key = "apostrophe" func = "tag_toggle_additional" cmd ="4" [/key]
+   [key] mod = {"Control", "Shift"} key = "parenleft" func = "tag_toggle_additional" cmd ="5" [/key]
+   [key] mod = {"Control", "Shift"} key = "minus" func = "tag_toggle_additional" cmd ="6" [/key]
+   [key] mod = {"Control", "Shift"} key = "egrave" func = "tag_toggle_additional" cmd ="7" [/key]
+   [key] mod = {"Control", "Shift"} key = "underscore" func = "tag_toggle_additional" cmd ="8" [/key]
+   [key] mod = {"Control", "Shift"} key = "ccedilla" func = "tag_toggle_additional" cmd ="9" [/key]
+   [key] mod = {"Control", "Shift"} key = "agrave" func = "tag_toggle_additional" cmd ="10" [/key]
+   [key] mod = {"Control", "Shift"} key = "parenright" func = "tag_toggle_additional" cmd ="11" [/key]
+   [key] mod = {"Control", "Shift"} key = "equal" func = "tag_toggle_additional" cmd ="12" [/key]
+
+   # Move to next/prev tag
+   [key] mod = {"Alt", "Super"} key = "Right" func = "tag_transfert_next" [/key]
+   [key] mod = {"Alt", "Super"} key = "Left" func = "tag_transfert_prev" [/key]
+
+   # Move to next/prev tag & follow 
+   [key] mod = {"Control", "Super"} key = "Right" func = "tag_transfert_next" [/key]
+   [key] mod = {"Control", "Super"} key = "Right" func = "tag_next" [/key]
+   [key] mod = {"Control", "Super"} key = "Left" func = "tag_transfert_prev" [/key]
+   [key] mod = {"Control", "Super"} key = "Left" func = "tag_prev" [/key]
+
+   # Selbar menu
+   [key] mod = {"Super", "Control"} key = "space" func = "clientlist" [/key]
+
+   # Swap tag with the next/prev tag
+   [key] mod = {"Control", "Alt"} key = "Right" func = "tag_swap_next" [/key]
+   [key] mod = {"Control", "Alt"} key = "Left" func = "tag_swap_prev" [/key]
+
+   # Dynamic tags
+   [key] mod = {"Control"} key = "Up" func = "launcher" cmd = "launcher_add_tag" [/key]
+   [key] mod = {"Control"} key = "Down" func = "launcher" cmd = "launcher_del_tag" [/key]
+   [key] mod = {"Super"} key = "Up" func = "tag_new" [/key]
+   [key] mod = {"Super"} key = "Down" func = "tag_del"[/key]
+
+   # Rename tag
+   [key] mod = {"Alt"} key = "r" func = "launcher" cmd = "tag_rename" [/key]
+
+   # Toggle the tag_autohide mode
+   [key] mod = {"Control"} key = "h" func = "toggle_tagautohide" [/key]
+
+   # Toggle ignore client (print a client in all tag)
+   [key] mod = {"Control", "Alt"} key = "i" func = "client_ignore_tag" [/key]
+
+   [key] mod = {"Shift"} key = "F9" func = "toggle_tag_expose" [/key]
+        
+   [key] mod = {"Alt"} key = "t" func = "client_set_master" [/key]
+
+   # Toggle split mode
+   [key] mod = {"Alt"} key = "s" func = "split_toggle" [/key]
+
+   # Swap next client with direction
+   [key] mod = {"Alt"} key = "h" func = "client_swap_left"   [/key]
+   [key] mod = {"Alt"} key = "l" func = "client_swap_right"  [/key]
+   [key] mod = {"Alt"} key = "k" func = "client_swap_top"    [/key]
+   [key] mod = {"Alt"} key = "j" func = "client_swap_bottom" [/key]
+
+   # Move next splitted client with direction
+   [key] mod = {"Super", "Shift"} key = "h" func = "split_move_left"   [/key]
+   [key] mod = {"Super", "Shift"} key = "l" func = "split_move_right"  [/key]
+   [key] mod = {"Super", "Shift"} key = "k" func = "split_move_top"    [/key]
+   [key] mod = {"Super", "Shift"} key = "j" func = "split_move_bottom" [/key]
+
+   # Resize selected tiled client with direction
+   [key] mod = {"Super"} key = "h" func = "client_resize_left"  cmd = "20"  [/key]
+   [key] mod = {"Super"} key = "l" func = "client_resize_left"  cmd = "-20" [/key]
+   [key] mod = {"Super"} key = "k" func = "client_resize_top"   cmd = "-20" [/key]
+   [key] mod = {"Super"} key = "j" func = "client_resize_top"   cmd = "20"  [/key]
+   [key] mod = { "Super", "Control"} key = "h" func = "client_resize_right"  cmd = "20"  [/key]
+   [key] mod = { "Super", "Control"} key = "l" func = "client_resize_right"  cmd = "-20" [/key]
+   [key] mod = { "Super", "Control"} key = "k" func = "client_resize_bottom" cmd = "-20" [/key]
+   [key] mod = { "Super", "Control"} key = "j" func = "client_resize_bottom" cmd = "20"  [/key]
+
+   [key] mod = {"Alt", "Super"} key = "l" func = "split_move_right"  [/key]
+   [key] mod = {"Alt", "Super"} key = "h" func = "split_move_left"   [/key]
+   [key] mod = {"Alt", "Super"} key = "k" func = "split_move_bottom" [/key]
+   [key] mod = {"Alt", "Super"} key = "j" func = "split_move_top"    [/key]
+
+   # Shortcuts
+   [key] mod = {""} key = "XF86ScreenSaver" fun = "spawn" cmd = "xscreensaver-command --lock" [/key]
+   [key] mod = {"Super"} key = "f" func = "spawn" cmd = "firefox" [/key]
+   [key] mod = {"Super"} key = "p" func = "spawn" cmd = "pidgin" [/key]
+   [key] mod = {"Super"} key = "i" func = "spawn" cmd = "urxvtc -name irssi -e irssi" [/key]
+   [key] mod = {"Super"} key = "m" func = "spawn" cmd = "urxvtc -name mutt -e mutt" [/key]
+   [key] mod = {""} key = "XF86AudioLowerVolume" func = "spawn" cmd = "amixer set Master unmute && amixer set Master playback 5-" [/key]
+   [key] mod = {""} key = "XF86AudioRaiseVolume" func = "spawn" cmd = "amixer set Master unmute && amixer set Master playback 5+" [/key]
+   [key] mod = {""} key = "XF86AudioMute" func = "spawn" cmd = "amixer sset Master toggle" [/key]
+
+[/keys]

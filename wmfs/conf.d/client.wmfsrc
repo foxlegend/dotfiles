@@ -1,0 +1,34 @@
+# WMFS configuration (client.wmfsrc)
+#
+# Maintener: David Pequegnot <david.pequegnot@gmail.com> aka `FoxLegend'
+# Github   : https://github.com/foxlegend/dotfiles
+# Bitbucket: https://bitbucket.org/FoxLegend/dotfiles
+#
+# Based on bacardi55's configuration: https://github.com/bacardi55/dotfiles
+#
+# Clients management settings
+
+[client]
+  # Client appearance
+  border_height        = 1          # clients border thickness
+  border_shadow        = false      # no shadow in addition to the client border
+  border_normal        = "#3F3E3C"  # unfocused clients border color
+  border_focus         = "#5F5E5C"  # focused clients border color
+  resize_corner_normal = "#5F5E5C"  # unfocused clients corner border color
+  resize_corner_focus  = "#5F5E5C"  # focused clients corner border color
+  
+  # Client behavior
+  client_auto_center   = true       # free clients will load in the center of the screen
+  set_new_win_master   = true       # new clients will occupy the master pane
+  client_tile_raise    = true       # clients will be raised in the stacking order when giving focus
+
+  # Mouse bindings
+  modifier = "Super"                # the modifier key for triggering mouse action on the client
+  [mouse] button = "1" func = "client_raise" [/mouse] # clicking on the left mouse button will raise
+  [mouse] button = "1" func = "mouse_move"   [/mouse] # and allow to move the client
+  [mouse] button = "3" func = "client_raise" [/mouse] # clicking on the right mouse button will raise
+  [mouse] button = "3" func = "mouse_resize" [/mouse] # and allow to resize the client
+
+  # I do not want a titlebar for clients, that is why I have no titlebar section here
+
+[/client]

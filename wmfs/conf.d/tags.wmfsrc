@@ -1,0 +1,60 @@
+# WMFS configuration (tags.wmfsrc)
+#
+# Maintener: David Pequegnot <david.pequegnot@gmail.com> aka `FoxLegend'
+# Github   : https://github.com/foxlegend/dotfiles
+# Bitbucket: https://bitbucket.org/FoxLegend/dotfiles
+#
+# Based on bacardi55's configuration: https://github.com/bacardi55/dotfiles
+#
+# Tags settings
+
+[tags]
+  [default_tag]
+    name             = "Tag"                 # default name for new tags
+    mwfact           = 0.4                   # default ratio between master and slave panes
+    nmaster          = 1                     # number of master clients
+    layout           = "tile_grid_vertical"  # default layout for new tags
+    resizehint	     = true                  # the tag will respect resizehint as directed by clients
+    infobar_position = "top"                 # position of the status bar
+  [/default_tag]
+
+  tag_round     = true                       # tag_next and tag_prev commands will cycle back to the beginning and end respectively
+  tag_auto_prev = false                      # accessing the same tag twice will go to previously selected tag
+
+  occupied_bg   = "#323232"                  # background color for occupied tags
+  occupied_fg   = "#FFFFFF"                  # foreground color for occupied tags
+  sel_fg        = "#FFFFFF"                  # foreground color of the selected tag
+  sel_bg        = "#4A8720"                  # background color of the selected tag
+  urgent_bg     = "#CC0000"                  # background color for tags with urgent status
+  urgent_fg     = "#FFFFFF"                  # foreground color for tags with urgent status
+
+  autohide      = false                      # do not hide empty tags by default
+  name_count    = true                       # the tag number will be displayed as its name
+
+  expose_name   = "EXPOSE"                   # expose name
+  expose_layout = "tile_grid"                # expose layout
+  
+  border        = false                      # no border around tag buttons
+
+  # Mouse buttons action on tag
+  mouse_button_tag_sel       = "1" # tag selection on left click
+  mouse_button_tag_transfert = "2" # tag transfert on middle click
+  mouse_button_tag_add       = "3" # tag fusion on right click
+  mouse_button_tag_next      = "4" # wheeling up will go to the next tag
+  mouse_button_tag_prev      = "5" # wheeling down will go to the previous tag
+
+  # Tag definition for the first screen
+  [tag] name = "www" layout = "tile_bottom" mwfact = 0.65 nmaster = 1 split = yes [/tag]
+  [tag] name = "emacs" layout = "tile_grid" [/tag]
+  [tag] name = "mail" layout = "tile_grid" [/tag]
+  [tag] name = "im" mwfact = 0.80 nmaster = 1 layout = "tile_right" resizehint = true [/tag]
+  [tag] name = "irc" layout = "tile_grid" [/tag]
+  [tag] name = "dev" layout = "tile_grid" [/tag]
+  [tag] name = "7" layout = "tile_grid" [/tag]
+  [tag] name = "8" layout = "tile_grid" [/tag]
+  [tag] name = "9" layout = "tile_grid" [/tag]
+  [tag] name = "10" layout = "tile_grid" [/tag]
+  [tag] name = "11" layout = "tile_grid" [/tag]
+  [tag] name = "12" layout = "free" [/tag]
+
+[/tags]

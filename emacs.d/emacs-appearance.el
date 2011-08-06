@@ -20,7 +20,7 @@
 (transient-mark-mode 1)
 
 ; Change emacs font
-(set-default-font "Inconsolata-g-9")
+(set-default-font "Inconsolata-9")
 
 ;;;-----------------------------------------------
 ;; Enables theme
