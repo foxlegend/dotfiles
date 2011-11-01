@@ -29,7 +29,7 @@
      URxvt.termName:	rxvt-256color
      !!
      ! The locale to use for opening the IM.
-     URxvt*imLocale: 	     	en_GB.UTF-8
+     URxvt*imLocale: 	en_GB.UTF-8
      !<<--Environment parameters--------------------------------------
 
      !>>--------------------------------------------------------------
@@ -201,7 +201,7 @@
      ! It is the inconsolata-g font well-designed for developers:
      ! http://leonardo-m.livejournal.com/77079.html
      ! Making the font smaller can cause some troubles.
-     URxvt.font:	xft:Inconsolata-g:size=9:antialias=true
+     URxvt.font:	xft:Inconsolata:size=9:antialias=true
      !!
      ! URxvt colors definitions (in order to display folders etc.)
      ! black + red

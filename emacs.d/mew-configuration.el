@@ -2,22 +2,43 @@
 ;; Mew configuration
 ; Mail accounts
 (setq mew-config-alist
+
       '((gmail
-	 (proto "%"))
-	(unilim)
+	 (proto              "%"                 )
+	 (name               "User Name"   )
+	 (user               "user"   )
+         (mail-domain        "gmail.com"         )
+	 
+	 (mew-imap-delete    nil                 )
+	 (imap-server        "imap.gmail.com"    )
+	 (imap-ssl           t                   )
+	 (imap-port          "imap"              )
+	 (imap-ssl-port      993                 )
+	 (imap-user          "imap.user"   )
+	 (smtp-user          "smtp.user"   )
+	 (smtp-server        "smtp.gmail.com"    )
+	 (smtp-port          "submission"        )
+	 (smtp-ssl-port      "submission"        )
+	 (fcc                "%Sent"             )
+	 (inbox-folder       "%inbox"            )
+	 (imap-queue-folder  "%queue"            )
+	 (imap-trash-folder  "%trash"            ))
+	(etu-unilim
+	 (mail-domain        "etu.unilim.fr"     ))
+	(xlim)
 	(default
 	  (proto             "%"                 )
-	  (name              "David Pequegnot"   )
-	  (user              "david.pequegnot"   )
-	  (mail-domain       "etu.unilim.fr"     )
+	  (name              "User Name"   )
+	  (user              "user"   )
+	  (mail-domain       "xlim.fr"     )
 	  (mew-imap-delete   nil                 )
-	  (imap-server       "imap.etu.unilim.fr")
+	  (imap-server       "imap.server")
 	  (imap-ssl          t                   )
 	  (imap-port         "imap"              )
 	  (imap-ssl-port     "imap"              )
-	  (imap-user         "pequegnot01"       )
-	  (smtp-server       "smtp.unilim.fr"    )
-	  (smtp-user         "pequegnot01"       )
+	  (imap-user         "login"       )
+	  (smtp-server       "smtp.server"    )
+	  (smtp-user         "login"       )
 	  (smtp-ssl          t                   )
 	  (smtp-port         "submission"        )
 	  (smtp-ssl-port     "submission"        )
@@ -34,6 +55,8 @@
 
 ; Retrieve automatically mails
 (setq mew-use-biff t)
+(setq mew-use-biff-bell t)
+(setq mew-biff-interval 1)
 
 ; Displays threads
 (setq mew-use-fancy-thread t)
